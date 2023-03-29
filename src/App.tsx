@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, ReactElement, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Header } from './components/Header/Header';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import { Home } from './Pages/home/Home';
 
-function App() {
+const App: FC = (): ReactElement => {
+  const [navVisible, showNavbar] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header visible={navVisible} show={showNavbar} navVisible={navVisible} />
+      <Sidebar visible={navVisible} show={showNavbar} navVisible={navVisible} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
