@@ -20,6 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['tsconfig.json'],
+    tsconfigRootDir: __dirname,
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
@@ -28,5 +29,12 @@ module.exports = {
     'spaced-comment': 'error',
     quotes: ['error', 'single'],
     'no-duplicate-imports': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/function-component-definition': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'no-use-before-define': 'off',
   },
 };

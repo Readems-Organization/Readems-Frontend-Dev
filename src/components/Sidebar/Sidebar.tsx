@@ -1,12 +1,7 @@
-import React, {
-  type Dispatch,
-  type FC,
-  type ReactElement,
-  type SetStateAction,
-} from 'react';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'
-import * as Styles from './styles/Sidebar.styles'
+import React, { type Dispatch, type FC, type ReactElement, type SetStateAction } from 'react';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import * as Styles from './styles/Sidebar.styles';
 import StyleSwitcher from '../StyleSwitcher/StyleSwitcher';
 
 interface ISidebarProps {
@@ -101,22 +96,18 @@ const sidebarItems = [
         zIndex: 1,
       },
     ],
-  }
-]
+  },
+];
 
-export const Sidebar: FC<ISidebarProps> = ({
-  show,
-  visible,
-  navVisible
-}): ReactElement => {
+export const Sidebar: FC<ISidebarProps> = ({ show, visible, navVisible }): ReactElement => {
   return (
     <Styles.StyledSidebarContainer className={visible ? '' : 'navbar'}>
       <StyleSwitcher />
 
       <Styles.StyledSidebarButton
-        type="button"
+        type='button'
         onClick={() => {
-          show(!visible)
+          show(!visible);
         }}
       >
         {visible ? <FaAngleLeft size={20} /> : <FaAngleRight size={20} />}
@@ -126,7 +117,7 @@ export const Sidebar: FC<ISidebarProps> = ({
           <h4>Readers</h4>
           {sidebarItems.map((items) =>
             items.readers.map((item) => (
-              <Styles.StyledSidebarList>
+              <Styles.StyledSidebarList key={item.name}>
                 <NavLink
                   to={item.path}
                   className={
@@ -135,9 +126,7 @@ export const Sidebar: FC<ISidebarProps> = ({
                       : 'page page-with-navbar outer-shadow hover-in-shadow'
                   }
                 >
-                  <Styles.StyledSidebarListItem>
-                    {item.name}
-                  </Styles.StyledSidebarListItem>
+                  <Styles.StyledSidebarListItem>{item.name}</Styles.StyledSidebarListItem>
                 </NavLink>
               </Styles.StyledSidebarList>
             )),
@@ -147,7 +136,7 @@ export const Sidebar: FC<ISidebarProps> = ({
           <h4>Writers</h4>
           {sidebarItems.map((items) =>
             items.writers.map((item) => (
-              <Styles.StyledSidebarList>
+              <Styles.StyledSidebarList key={item.name}>
                 <NavLink
                   to={item.path}
                   className={
@@ -156,9 +145,7 @@ export const Sidebar: FC<ISidebarProps> = ({
                       : 'page page-with-navbar outer-shadow hover-in-shadow'
                   }
                 >
-                  <Styles.StyledSidebarListItem>
-                    {item.name}
-                  </Styles.StyledSidebarListItem>
+                  <Styles.StyledSidebarListItem>{item.name}</Styles.StyledSidebarListItem>
                 </NavLink>
               </Styles.StyledSidebarList>
             )),
@@ -168,7 +155,7 @@ export const Sidebar: FC<ISidebarProps> = ({
           <h4>Resources</h4>
           {sidebarItems.map((items) =>
             items.resources.map((item) => (
-              <Styles.StyledSidebarList>
+              <Styles.StyledSidebarList key={item.name}>
                 <NavLink
                   to={item.path}
                   className={
@@ -177,9 +164,7 @@ export const Sidebar: FC<ISidebarProps> = ({
                       : 'page page-with-navbar outer-shadow hover-in-shadow'
                   }
                 >
-                  <Styles.StyledSidebarListItem>
-                    {item.name}
-                  </Styles.StyledSidebarListItem>
+                  <Styles.StyledSidebarListItem>{item.name}</Styles.StyledSidebarListItem>
                 </NavLink>
               </Styles.StyledSidebarList>
             )),
