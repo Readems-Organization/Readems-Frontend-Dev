@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export type SectionProps = {
-  styleType?: 'primary' | 'secondary';
-};
+export interface SectionProps {
+  styleType?: 'primary' | 'secondary'
+}
 
 export const StyledSidebarContainer = styled.div`
   min-height: 100vh;

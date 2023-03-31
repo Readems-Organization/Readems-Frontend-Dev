@@ -1,4 +1,9 @@
-import { Dispatch, FC, ReactElement, SetStateAction } from 'react';
+import {
+  type Dispatch,
+  type FC,
+  type ReactElement,
+  type SetStateAction,
+} from 'react';
 import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../Button/Button';
@@ -13,43 +18,43 @@ interface IHeaderProps {
 
 export const Header: FC<IHeaderProps> = ({ show, visible }): ReactElement => {
   return (
-    <>
-      <Styles.StyledHeaderContainer>
-        <Styles.StyledHeaderWrapper>
-          <>
-            <img src={Logo} alt="" />
-            <Styles.StyledHeaderNav>
-              <NavLink to="/">
-                <li>Home</li>
-              </NavLink>
-              <NavLink to="/">
-                <li>Membership</li>
-              </NavLink>
-              <NavLink to="/">
-                <li>Our Story</li>
-              </NavLink>
-            </Styles.StyledHeaderNav>
-            <Styles.StyledHeaderButton>
-              <Button
-                width="248px"
-                height="57px"
-                background="#1c4edf"
-                color="#fff"
-                border="none"
-                borderRadius="10px"
-                fontSize="16px"
-              >
-                Join our Waitlist
-              </Button>
-            </Styles.StyledHeaderButton>
-            <>
-              <Styles.StyledHeaderButtonBars onClick={() => show(!visible)}>
-                <FaBars size={24} />
-              </Styles.StyledHeaderButtonBars>
-            </>
-          </>
-        </Styles.StyledHeaderWrapper>
-      </Styles.StyledHeaderContainer>
-    </>
+    <Styles.StyledHeaderContainer>
+      <Styles.StyledHeaderWrapper>
+        <>
+          <img src={Logo} alt="" />
+          <Styles.StyledHeaderNav>
+            <NavLink to="/">
+              <li>Home</li>
+            </NavLink>
+            <NavLink to="/">
+              <li>Membership</li>
+            </NavLink>
+            <NavLink to="/">
+              <li>Our Story</li>
+            </NavLink>
+          </Styles.StyledHeaderNav>
+          <Styles.StyledHeaderButton>
+            <Button
+              width="248px"
+              height="57px"
+              background="#1c4edf"
+              color="#fff"
+              border="none"
+              borderRadius="10px"
+              fontSize="16px"
+            >
+              Join our Waitlist
+            </Button>
+          </Styles.StyledHeaderButton>
+          <Styles.StyledHeaderButtonBars
+            onClick={() => {
+              show(!visible);
+            }}
+          >
+            <FaBars size={24} />
+          </Styles.StyledHeaderButtonBars>
+        </>
+      </Styles.StyledHeaderWrapper>
+    </Styles.StyledHeaderContainer>
   );
 };

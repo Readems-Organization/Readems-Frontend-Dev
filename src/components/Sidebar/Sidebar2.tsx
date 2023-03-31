@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from 'react';
+import { type FC, type ReactElement, useState } from 'react';
 import { Navbar } from './Navbar';
 
 export const Sidebar: FC = (): ReactElement => {

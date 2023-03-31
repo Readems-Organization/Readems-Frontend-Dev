@@ -7,6 +7,6 @@ import { darkMode } from './darkModeReducer';
 
 export const reducers = combineReducers({
   darkMode,
-});
+})
 
 export type State = ReturnType<typeof reducers>;

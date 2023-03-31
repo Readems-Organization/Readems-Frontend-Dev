@@ -3,6 +3,6 @@ export interface IDarkLightMode {
   lightMode?: string;
 }
 
-export type InitialDarkLightMode = {
-  darkMode: IDarkLightMode;
-};
+export interface InitialDarkLightMode {
+  darkMode: IDarkLightMode
+}

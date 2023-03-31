@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, CSSProperties } from 'react';
+import React, { type FC, type ReactElement, type CSSProperties } from 'react';
 
 interface Props {
   width?: string;

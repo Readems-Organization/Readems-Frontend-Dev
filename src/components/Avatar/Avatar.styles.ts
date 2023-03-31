@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export type IAvatarProps = {
-  size?: 'big' | 'medium' | 'small' | 'smaller';
-};
+export interface IAvatarProps {
+  size?: 'big' | 'medium' | 'small' | 'smaller'
+}
 
 export const StyledAvatar = styled.div<IAvatarProps>`
   display: flex;

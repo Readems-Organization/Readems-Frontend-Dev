@@ -1,5 +1,13 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { FaTwitter, FaSearch, FaPen, FaCheck, FaSortAmountUp, FaToggleOn, FaToggleOff } from 'react-icons/fa';
+import {
+  FaTwitter,
+  FaSearch,
+  FaPen,
+  FaCheck,
+  FaSortAmountUp,
+  FaToggleOn,
+  FaToggleOff
+} from 'react-icons/fa';
 import {
   RiArrowRightSLine,
   RiArrowLeftSLine,
@@ -76,7 +84,7 @@ import {
   RiShieldKeyholeLine,
 } from 'react-icons/ri';
 import { TiWarning } from 'react-icons/ti';
-import { IconType as RiIconType } from 'react-icons/lib';
+import { type IconType as RiIconType } from 'react-icons/lib';
 
 export default {
   Twitter: FaTwitter,

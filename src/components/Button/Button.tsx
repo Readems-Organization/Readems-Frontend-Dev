@@ -1,16 +1,16 @@
-import React, { FC, ReactElement, ReactNode } from 'react';
+import React, { type FC, type ReactElement, type ReactNode } from 'react';
 import styled from 'styled-components';
 
 interface IColor {
   color: string;
 }
 
-type BoxShadow = {
-  outerShadow0: `3px 3px 3px #363636, -2px -3px 3px ${IColor['color']}`;
-  outerShadow1: `0 0 0 #363636, 0 0 0 ${IColor['color']}`;
-  innerShadow0: `inset 3px 3px 3px #363636, inset -3px -3px 3px${IColor['color']}`;
-  innerShadow1: `inset 0px 0px 0px #363636, inset 0px 0px 0px ${IColor['color']}`;
-};
+interface BoxShadow {
+  outerShadow0: `3px 3px 3px #363636, -2px -3px 3px ${IColor['color']}`
+  outerShadow1: `0 0 0 #363636, 0 0 0 ${IColor['color']}`
+  innerShadow0: `inset 3px 3px 3px #363636, inset -3px -3px 3px${IColor['color']}`
+  innerShadow1: `inset 0px 0px 0px #363636, inset 0px 0px 0px ${IColor['color']}`
+}
 export interface BaseButtonProps {
   children: ReactNode;
   height?: string;
@@ -27,7 +27,13 @@ export interface BaseButtonProps {
   disabled?: boolean;
   hoverColor?: string;
   hoverBackground?: string;
-  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase' | 'full-width' | 'full-size-kana';
+  textTransform?:
+  | 'none'
+  | 'capitalize'
+  | 'uppercase'
+  | 'lowercase'
+  | 'full-width'
+  | 'full-size-kana';
   visibility?: 'visible' | 'hidden';
   border?: string;
   marginTop?: string;
@@ -40,18 +46,21 @@ export interface BaseButtonProps {
 
 export const StyledButtonContainer = styled.div<BaseButtonProps>`
   .outerShadow {
-    box-shadow: 3px 3px 3px ${(props) => props.background}, -2px -3px 3px ${(props) => props.background};
+    box-shadow: 3px 3px 3px ${(props) => props.background},
+      -2px -3px 3px ${(props) => props.background};
     /* box-shadow: -1px -1px 3px, -2px -3px 3px; */
   }
   .innerShadow {
-    box-shadow: inset 3px 3px 3px ${(props) => props.background}, inset -3px -3px 3px ${(props) => props.background};
+    box-shadow: inset 3px 3px 3px ${(props) => props.background},
+      inset -3px -3px 3px ${(props) => props.background};
   }
   .hoverInShadow {
     position: relative;
     z-index: 1;
   }
   .hoverInShadow:hover {
-    box-shadow: 0 0 0 ${(props) => props.background}, 0 0 0 ${(props) => props.background};
+    box-shadow: 0 0 0 ${(props) => props.background},
+      0 0 0 ${(props) => props.background};
   }
   .hoverInShadow:after {
     content: '';
@@ -64,8 +73,8 @@ export const StyledButtonContainer = styled.div<BaseButtonProps>`
     z-index: -1;
   }
   .hoverInShadow:hover:after {
-    /* box-shadow: inset 3px 3px 3px ${(props) => props.background}, inset -3px -3px 3px ${(props) =>
-      props.background}; */
+    /* box-shadow: inset 3px 3px 3px ${(props) =>
+      props.background}, inset -3px -3px 3px ${(props) => props.background}; */
     /* box-shadow: 0px -1px 0px inset, -2px -2px 2px inset; */
     box-shadow: inset 1px 1px 1px, inset -1px -1px 1px;
     border-radius: 15px;

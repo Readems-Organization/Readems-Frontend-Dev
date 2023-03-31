@@ -1,4 +1,4 @@
-import { FC, ReactElement, useEffect, useState } from 'react';
+import { type FC, type ReactElement, useEffect, useState } from 'react';
 import * as Styles from './styles/StyleSwitcher.styles';
 
 const StyleSwitcher: FC = (): ReactElement => {
@@ -33,7 +33,9 @@ const StyleSwitcher: FC = (): ReactElement => {
     <Styles.Container>
       <Styles.ToggleContainer
         onClick={handleNightDay}
-        className={`toggle${localStorage.getItem('theme') !== 'light' ? ' night' : ''}`}
+        className={`toggle${
+          localStorage.getItem('theme') !== 'light' ? ' night' : ''
+        }`}
       >
         <Styles.Notch className="notch">
           <div className="crater" />

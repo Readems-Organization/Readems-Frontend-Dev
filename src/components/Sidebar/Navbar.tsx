@@ -1,4 +1,9 @@
-import { Dispatch, FC, ReactElement, SetStateAction } from 'react';
+import {
+  type Dispatch,
+  type FC,
+  type ReactElement,
+  type SetStateAction,
+} from 'react';
 import { FaAngleLeft, FaAngleRight, FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import * as Styles from './styles/Sidebar2.styles';
@@ -95,19 +100,34 @@ const navItems = [
         zIndex: 1,
       },
     ],
-  },
-];
+  }
+]
 
-export const Navbar: FC<INavbarProps> = ({ visible, show, navVisible }): ReactElement => {
+export const Navbar: FC<INavbarProps> = ({
+  visible,
+  show,
+  navVisible
+}): ReactElement => {
   return (
     <>
       <div className="mobile-nav">
-        <button className="mobile-nav-btn" onClick={() => show(!visible)}>
+        <button
+          className="mobile-nav-btn"
+          onClick={() => {
+            show(!visible);
+          }}
+        >
           <FaBars size={24} />
         </button>
       </div>
       <Styles.StyledSidebarContainer className={visible ? '' : 'navbar'}>
-        <button type="button" onClick={() => show(!visible)} className="nav-btn">
+        <button
+          type="button"
+          onClick={() => {
+            show(!visible)
+          }}
+          className="nav-btn"
+        >
           {visible ? <FaAngleLeft size={30} /> : <FaAngleRight size={30} />}
         </button>
         <Styles.StyledSidebarList>

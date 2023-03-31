@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { type FC, type ReactElement } from 'react';
 
 interface Props {
   width?: string;
@@ -6,7 +6,11 @@ interface Props {
   fill?: string;
 }
 
-const ArrowDown: FC<Props> = ({ width = '18', height = '18', fill = 'white' }): ReactElement => {
+const ArrowDown: FC<Props> = ({
+  width = '18',
+  height = '18',
+  fill = 'white'
+}): ReactElement => {
   return (
     <svg
       width={width}
